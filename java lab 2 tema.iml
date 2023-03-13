@@ -1,0 +1,116 @@
+ex1 Farenheit to Celsius:
+
+import java.util.Scanner;
+
+public class FahrenheitToCelsius {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Input a degree in Fahrenheit: ");
+        float fahrenheit = input.nextFloat();
+
+        float celsius = (fahrenheit - 32) * 5 / 9;
+
+        System.out.printf("%.1f degree Fahrenheit is equal to %.1f in Celsius", fahrenheit, celsius);
+    }
+}
+
+ex2:
+
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Input an integer between 0 and 1000: ");
+        int number = input.nextInt();
+
+        int sum = 0;
+        int temp = number;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += digit;
+            temp /= 10;
+        }
+
+        System.out.printf("The sum of all digits in %d is %d", number, sum);
+    }
+}
+
+ex3:
+
+import java.util.Scanner;
+
+public class Powers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        double number = input.nextDouble();
+
+        double square = Math.pow(number, 2);
+        double cube = Math.pow(number, 3);
+        double fourthPower = Math.pow(number, 4);
+
+        System.out.printf("Square: %.2f\n", square);
+        System.out.printf("Cube: %.2f\n", cube);
+        System.out.printf("Fourth power: %.2f", fourthPower);
+    }
+}
+
+ex4:
+
+import java.util.Scanner;
+
+public class ArithmeticOperations {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the first integer: ");
+        int num1 = input.nextInt();
+
+        System.out.print("Enter the second integer: ");
+        int num2 = input.nextInt();
+
+        int sum = num1 + num2;
+        int diff = num1 - num2;
+        int product = num1 * num2;
+        double average = (num1 + num2) / 2.0;
+        int distance = Math.abs(num1 - num2);
+        int max = Math.max(num1, num2);
+        int min = Math.min(num1, num2);
+
+        System.out.printf("Sum: %d\n", sum);
+        System.out.printf("Difference: %d\n", diff);
+        System.out.printf("Product: %d\n", product);
+        System.out.printf("Average: %.2f\n", average);
+        System.out.printf("Distance: %d\n", distance);
+        System.out.printf("Maximum: %d\n", max);
+        System.out.printf("Minimum: %d\n", min);
+    }
+}
+
+ex5:
+
+import java.util.Scanner;
+
+public class BreakDigits {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Input six non-negative digits: ");
+        int num = input.nextInt();
+
+        System.out.print("Digits in " + num + " are: ");
+        int div = 100000;
+
+        for (int i = 0; i < 6; i++) {
+            int digit = num / div;
+            num = num % div;
+            div = div / 10;
+            System.out.print(digit + " ");
+        }
+    }
+}
