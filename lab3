@@ -1,0 +1,150 @@
+#ex 1
+
+import java.util.Scanner;
+
+public class PositiveNegative {
+    public static void main(String[] args) {
+        // Create a Scanner object to read user input
+        Scanner input = new Scanner(System.in);
+
+        // Ask the user to input a number
+        System.out.print("Enter a number: ");
+
+        // Read the input number from the user
+        int number = input.nextInt();
+
+        // Determine whether the number is positive or negative and print the result
+        if (number > 0) {
+            System.out.println("Number is positive");
+        } else if (number < 0) {
+            System.out.println("Number is negative");
+        } else {
+            System.out.println("Number is zero");
+        }
+
+        // Close the scanner
+        input.close();
+    }
+}
+
+#ex2
+
+import java.util.Scanner;
+
+public class WeekdayName {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user to enter a number
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        // Calculate the weekday number
+        int weekdayNum = num % 7 + 1;
+
+        // Display the weekday name based on the weekday number
+        String weekdayName;
+        switch (weekdayNum) {
+            case 1:
+                weekdayName = "Sunday";
+                break;
+            case 2:
+                weekdayName = "Monday";
+                break;
+            case 3:
+                weekdayName = "Tuesday";
+                break;
+            case 4:
+                weekdayName = "Wednesday";
+                break;
+            case 5:
+                weekdayName = "Thursday";
+                break;
+            case 6:
+                weekdayName = "Friday";
+                break;
+            default:
+                weekdayName = "Saturday";
+                break;
+        }
+
+        System.out.println(weekdayName);
+    }
+}
+
+#ex 3
+
+public class PrimeNumbers {
+    public static void main(String[] args) {
+        int i, j;
+        boolean isPrime;
+        System.out.println("Prime numbers between 1 and 100:");
+        for (i = 2; i <= 100; i++) {
+            isPrime = true;
+            for (j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+#ex4
+
+import java.util.Scanner;
+
+public class SumOfEvenAndOddDigits {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+
+        int evenSum = 0;
+        int oddSum = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            if (digit % 2 == 0) {
+                evenSum += digit;
+            } else {
+                oddSum += digit;
+            }
+            num /= 10;
+        }
+
+        System.out.println("Sum of even digits: " + evenSum);
+        System.out.println("Sum of odd digits: " + oddSum);
+    }
+}
+
+
+#ex5 sistemul de votare in romania
+
+import java.util.Scanner;
+
+public class VoteEligibility {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+        sc.close();
+
+        String message = "";
+        switch (age) {
+            case 16:
+                message = "You can vote in local elections.";
+                break;
+            case 18:
+                message = "You can vote in all elections.";
+                break;
+            default:
+                message = "You are not eligible to vote.";
+                break;
+        }
+        System.out.println(message);
+    }
+}
